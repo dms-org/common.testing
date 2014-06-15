@@ -17,19 +17,6 @@ abstract class Bootstrapper
             $configurationPath,
             $timeLimit = null)
     {
-        $projectAutoLoaderPath = $directory . '/../vendor/autoload.php';
-        $dependencyAutoLoaderPath = $directory . '/../../../../autoload.php';
-
-        if (file_exists($projectAutoLoaderPath)) {
-            $composerAutoLoader = require_once $projectAutoLoaderPath;
-        } elseif (file_exists($dependencyAutoLoaderPath)) {
-            $composerAutoLoader = require_once $dependencyAutoLoaderPath;
-        } else {
-            throw new \Exception("Cannot load tests under $directory: please load via composer");
-        }
-        
-        $composerAutoLoader->addPsr4($namespace . '\\', $directory);
-
         error_reporting(-1);
         ini_set('display_errors', 'On');
         set_time_limit($timeLimit ?: 0);

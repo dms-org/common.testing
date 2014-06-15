@@ -6,7 +6,12 @@ class CLITestRunner extends TestRunner
 {
     protected function getCustomArguments(array &$arguments)
     {
-        $arguments = array_merge($arguments, $_SERVER['argv']);
+        $cliArguments = $_SERVER['argv'];
+        
+        //Remove script path argument
+        unset($cliArguments[0]);
+        
+        $arguments = array_merge($arguments, $cliArguments);
     }
 }
 

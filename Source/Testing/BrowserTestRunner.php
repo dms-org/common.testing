@@ -8,7 +8,7 @@ class BrowserTestRunner extends TestRunner
     {
         $arguments[] = '--printer';
         $arguments[] = StreamingHTMLResultPrinter::PRINTER_CLASS;
-
+        
         if(isset($_GET['testsuite'])) {
             $arguments[] = '--testsuite';
             $arguments[] = $_GET['testsuite'];
