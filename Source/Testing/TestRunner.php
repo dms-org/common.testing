@@ -2,14 +2,14 @@
 
 namespace IDDigital\CMS\Common\Testing;
 
-class TestRunner
+abstract class TestRunner
 {
     /**
      * The path to the project's xml configuration file.
      * 
      * @var string
      */
-    private $configurationPath;
+    protected $configurationPath;
     
     public function __construct($configurationPath)
     {
@@ -24,7 +24,7 @@ class TestRunner
      */
     public function run()
     {
-        $argv = $_SERVER['argv'] = $this->loadArguments($_GET);
+        $_SERVER['argv'] = $this->getArguments();
         \PHPUnit_TextUI_Command::main();
     }
     
@@ -34,19 +34,20 @@ class TestRunner
      * @param array $loaderArguments
      * @return array
      */
-    private function loadArguments(array $loaderArguments)
+    private function getArguments()
     {
         $arguments = [
             '--configuration', $this->configurationPath,
-            '--printer', StreamingHTMLResultPrinter::PRINTER_CLASS,
         ];
-
-        if(isset($loaderArguments['testsuite'])) {
-            $arguments[] = '--testsuite';
-            $arguments[] = $loaderArguments['testsuite'];
-        }
+        
+        $this->getCustomArguments($arguments);
 
         return $arguments;
+    }
+    
+    protected function getCustomArguments(array &$arguments)
+    {
+        
     }
 }
 
