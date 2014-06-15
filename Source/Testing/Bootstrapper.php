@@ -21,7 +21,7 @@ abstract class Bootstrapper
         ini_set('display_errors', 'On');
         set_time_limit($timeLimit ?: 0);
         
-        $fullConfigurationPath = $directory . $configurationPath;
+        $fullConfigurationPath = $directory . DIRECTORY_SEPARATOR . $configurationPath;
         
         if(PHP_SAPI === 'cli') {
             self::runForCLI($namespace, $fullConfigurationPath);
