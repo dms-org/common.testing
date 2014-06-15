@@ -7,7 +7,7 @@
             "email": "elliot@aanet.com.au"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "IDDigital\\CMS\\Common\\": "Source/"
