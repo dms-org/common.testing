@@ -1,8 +1,8 @@
 <?php
 
-namespace IDDigital\CMS\Common\Testing;
+namespace Iddigital\Cms\Common\Testing;
 
-class CMSTestCase extends \PHPUnit_Framework_TestCase
+class CmsTestCase extends \PHPUnit_Framework_TestCase
 {
     
 }

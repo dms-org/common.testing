@@ -1,6 +1,6 @@
 <?php
 
-namespace IDDigital\CMS\Common\Testing;
+namespace Iddigital\Cms\Common\Testing;
 
 class StreamingHTMLResultPrinter extends \PHPUnit_TextUI_ResultPrinter
 {
