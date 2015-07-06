@@ -14,5 +14,3 @@ class CLITestRunner extends TestRunner
         $arguments = array_merge($arguments, $cliArguments);
     }
 }
-
-?>

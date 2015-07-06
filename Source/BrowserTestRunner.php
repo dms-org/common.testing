@@ -16,4 +16,3 @@ class BrowserTestRunner extends TestRunner
     }
 }
 
-?>

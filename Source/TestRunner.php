@@ -50,5 +50,3 @@ abstract class TestRunner
         
     }
 }
-
-?>
