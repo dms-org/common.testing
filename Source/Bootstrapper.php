@@ -20,21 +20,22 @@ abstract class Bootstrapper
         error_reporting(-1);
         ini_set('display_errors', 'On');
         set_time_limit($timeLimit ?: 0);
+        @date_default_timezone_set(@date_default_timezone_get());
         
         $fullConfigurationPath = $directory . DIRECTORY_SEPARATOR . $configurationPath;
         
         if(PHP_SAPI === 'cli') {
-            self::runForCLI($namespace, $fullConfigurationPath);
+            self::runForCli($namespace, $fullConfigurationPath);
         } else {
             self::runForBrowser($namespace, $fullConfigurationPath);
         }
     }
     
-    public static function runForCLI(
+    public static function runForCli(
             $namespace,
             $fullConfigurationPath)
     {
-        $testRunner = new CLITestRunner($fullConfigurationPath);
+        $testRunner = new CliTestRunner($fullConfigurationPath);
         
         $testRunner->run();
     }

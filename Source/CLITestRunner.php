@@ -2,7 +2,7 @@
 
 namespace Iddigital\Cms\Common\Testing;
 
-class CLITestRunner extends TestRunner
+class CliTestRunner extends TestRunner
 {
     protected function getCustomArguments(array &$arguments)
     {

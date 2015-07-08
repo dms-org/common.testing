@@ -2,7 +2,7 @@
 
 namespace Iddigital\Cms\Common\Testing;
 
-class StreamingHTMLResultPrinter extends \PHPUnit_TextUI_ResultPrinter
+class StreamingHtmlResultPrinter extends \PHPUnit_TextUI_ResultPrinter
 {
     const PRINTER_CLASS = __CLASS__;
     const BUFFER_PADDING = 2048;
