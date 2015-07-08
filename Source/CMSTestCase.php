@@ -12,12 +12,18 @@ class CmsTestCase extends \PHPUnit_Framework_TestCase
      */
     public function assertThrows(callable $operation, $exception = \Exception::class, $message = 'Failed asserting that the operation throws an exception')
     {
+        $failed = false;
+
         try {
             $operation();
-            $this->fail($message);
+            $failed = true;
         } catch (\Exception $e) {
             $this->assertInstanceOf($exception, $e);
             return $e;
+        }
+
+        if ($failed) {
+            $this->fail($message);
         }
     }
 }
