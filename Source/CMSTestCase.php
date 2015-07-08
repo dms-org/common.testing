@@ -18,6 +18,10 @@ class CmsTestCase extends \PHPUnit_Framework_TestCase
             $operation();
             $failed = true;
         } catch (\Exception $e) {
+            if (strpos(get_class($e), 'PHPUnit_Framework') === 0) {
+                throw $e;
+            }
+
             $this->assertInstanceOf($exception, $e);
             return $e;
         }
