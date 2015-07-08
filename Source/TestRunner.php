@@ -15,23 +15,27 @@ abstract class TestRunner
     {
         $this->configurationPath = $configurationPath;
     }
-    
+
     /**
      * Run the test suite.
-     * Results will be outputed.
-     * 
+     * Results will be outputted.
+     *
      * @return void
      */
     public function run()
     {
         $_SERVER['argv'] = $this->getArguments();
-        \PHPUnit_TextUI_Command::main();
+
+        if (class_exists('IDE_PHPUnit_TextUI_Command')) {
+            \IDE_PHPUnit_TextUI_Command::main();
+        } else {
+            \PHPUnit_TextUI_Command::main();
+        }
     }
     
     /**
      * Returns the arguments compatible with phpunit cli as an array.
-     * 
-     * @param array $loaderArguments
+     *
      * @return array
      */
     private function getArguments()
