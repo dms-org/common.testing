@@ -18,6 +18,10 @@ abstract class PhpunitBlacklist
         \PHPUnit_Util_Blacklist::$blacklistedClassNames += [
             CmsTestCase::class => 2
         ];
+
+        if (class_exists('Iddigital\Cms\Core\Exception\BaseException')) {
+            \PHPUnit_Util_Blacklist::$blacklistedClassNames['Iddigital\Cms\Core\Exception\BaseException'] = 1;
+        }
     }
 }
 
