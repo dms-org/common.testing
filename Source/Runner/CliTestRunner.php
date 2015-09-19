@@ -1,10 +1,10 @@
 <?php
 
-namespace Iddigital\Cms\Common\Testing;
+namespace Iddigital\Cms\Common\Testing\Runner;
 
 class CliTestRunner extends TestRunner
 {
-    protected function getCustomArguments(array &$arguments)
+    protected function appendCustomArguments(array &$arguments)
     {
         $cliArguments = $_SERVER['argv'];
         

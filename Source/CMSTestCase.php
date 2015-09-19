@@ -7,16 +7,18 @@ class CmsTestCase extends \PHPUnit_Framework_TestCase
     /**
      * @param callable $operation
      * @param string   $exception
+     * @param string   $message
      *
-     * @return \Exception
+     * @return \Exception|null
+     * @throws \Exception
      */
     public function assertThrows(callable $operation, $exception = \Exception::class, $message = 'Failed asserting that the operation throws an exception')
     {
-        $failed = false;
+        $thrownException = true;
 
         try {
             $operation();
-            $failed = true;
+            $thrownException = false;
         } catch (\Exception $e) {
             if (strpos(get_class($e), 'PHPUnit_Framework') === 0) {
                 throw $e;
@@ -26,8 +28,10 @@ class CmsTestCase extends \PHPUnit_Framework_TestCase
             return $e;
         }
 
-        if ($failed) {
+        if (!$thrownException) {
             $this->fail($message);
         }
+
+        return null;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Iddigital\Cms\Common\Testing;
+namespace Iddigital\Cms\Common\Testing\Runner;
 
 abstract class TestRunner
 {
@@ -17,8 +17,7 @@ abstract class TestRunner
     }
 
     /**
-     * Run the test suite.
-     * Results will be outputted.
+     * Runs the test suite.
      *
      * @return void
      */
@@ -26,6 +25,10 @@ abstract class TestRunner
     {
         $_SERVER['argv'] = $this->getArguments();
 
+        // If this class is defined, the test suite is
+        // being run through the PhpStorm IDE. This allows
+        // the IDE to capture the test output so we should
+        // run it through that class.
         if (class_exists('IDE_PHPUnit_TextUI_Command')) {
             \IDE_PHPUnit_TextUI_Command::main();
         } else {
@@ -44,13 +47,10 @@ abstract class TestRunner
             '--configuration', $this->configurationPath,
         ];
         
-        $this->getCustomArguments($arguments);
+        $this->appendCustomArguments($arguments);
 
         return $arguments;
     }
     
-    protected function getCustomArguments(array &$arguments)
-    {
-        
-    }
+    abstract protected function appendCustomArguments(array &$arguments);
 }

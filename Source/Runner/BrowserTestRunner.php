@@ -1,13 +1,15 @@
 <?php
 
-namespace Iddigital\Cms\Common\Testing;
+namespace Iddigital\Cms\Common\Testing\Runner;
+
+use Iddigital\Cms\Common\Testing\Runner\Printer\StreamingHtmlResultPrinter;
 
 class BrowserTestRunner extends TestRunner
 {
-    protected function getCustomArguments(array &$arguments)
+    protected function appendCustomArguments(array &$arguments)
     {
         $arguments[] = '--printer';
-        $arguments[] = StreamingHtmlResultPrinter::PRINTER_CLASS;
+        $arguments[] = StreamingHtmlResultPrinter::class;
         
         if(isset($_GET['testsuite'])) {
             $arguments[] = '--testsuite';
