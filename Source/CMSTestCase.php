@@ -2,7 +2,7 @@
 
 namespace Iddigital\Cms\Common\Testing;
 
-class CmsTestCase extends \PHPUnit_Framework_TestCase
+abstract class CmsTestCase extends \PHPUnit_Framework_TestCase
 {
     /**
      * @param callable $operation
