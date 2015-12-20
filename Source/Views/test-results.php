@@ -1,5 +1,5 @@
 <?php 
-/* @var $runner Iddigital\Cms\Common\Testing\TestRunner */
+/* @var $runner Dms\Common\Testing\Runner\TestRunner */
 /* @var $title string */ 
 ?>
 <html>

@@ -1,8 +1,8 @@
 <?php
 
-namespace Iddigital\Cms\Common\Testing\Runner;
+namespace Dms\Common\Testing\Runner;
 
-use Iddigital\Cms\Common\Testing\Runner\Printer\StreamingHtmlResultPrinter;
+use Dms\Common\Testing\Runner\Printer\StreamingHtmlResultPrinter;
 
 class BrowserTestRunner extends TestRunner
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Iddigital\Cms\Common\Testing\Runner;
+namespace Dms\Common\Testing\Runner;
 
 class CliTestRunner extends TestRunner
 {

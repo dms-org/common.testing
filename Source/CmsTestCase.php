@@ -1,6 +1,6 @@
 <?php
 
-namespace Iddigital\Cms\Common\Testing;
+namespace Dms\Common\Testing;
 
 abstract class CmsTestCase extends \PHPUnit_Framework_TestCase
 {

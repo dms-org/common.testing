@@ -1,6 +1,6 @@
 <?php
 
-namespace Iddigital\Cms\Common\Testing;
+namespace Dms\Common\Testing;
 
 /**
  * Adds the appropriate classes to the phpunit blacklist
@@ -19,8 +19,8 @@ abstract class PhpunitBlacklist
             CmsTestCase::class => 2
         ];
 
-        if (class_exists('Iddigital\Cms\Core\Exception\BaseException')) {
-            \PHPUnit_Util_Blacklist::$blacklistedClassNames['Iddigital\Cms\Core\Exception\BaseException'] = 1;
+        if (class_exists('Dms\Core\Exception\BaseException')) {
+            \PHPUnit_Util_Blacklist::$blacklistedClassNames['Dms\Core\Exception\BaseException'] = 1;
         }
     }
 }

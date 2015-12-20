@@ -1,5 +1,5 @@
 {
-    "name": "iddigital/cms.common.testing",
+    "name": "dms/common.testing",
     "description": "Common testing utilities package for all cms packages",
     "authors": [
         {
@@ -10,7 +10,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Iddigital\\Cms\\Common\\Testing\\": "Source/"
+            "Dms\\Common\\Testing\\": "Source/"
         }
     },
     "require-dev": {

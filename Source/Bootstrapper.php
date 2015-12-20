@@ -1,10 +1,10 @@
 <?php
 
-namespace Iddigital\Cms\Common\Testing;
+namespace Dms\Common\Testing;
 
-use Iddigital\Cms\Common\Testing\Runner\BrowserTestRunner;
-use Iddigital\Cms\Common\Testing\Runner\CliTestRunner;
-use Iddigital\Cms\Common\Testing\Runner\TestRunner;
+use Dms\Common\Testing\Runner\BrowserTestRunner;
+use Dms\Common\Testing\Runner\CliTestRunner;
+use Dms\Common\Testing\Runner\TestRunner;
 
 abstract class Bootstrapper
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Iddigital\Cms\Common\Testing\Runner;
+namespace Dms\Common\Testing\Runner;
 
 abstract class TestRunner
 {
