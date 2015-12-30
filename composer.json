@@ -1,6 +1,6 @@
 {
     "name": "dms/common.testing",
-    "description": "Common testing utilities package for all cms packages",
+    "description": "Common testing utilities package for all dms packages",
     "authors": [
         {
             "name": "Elliot Levin",
@@ -10,7 +10,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Dms\\Common\\Testing\\": "Source/"
+            "Dms\\Common\\Testing\\": "src/"
         }
     },
     "require-dev": {
