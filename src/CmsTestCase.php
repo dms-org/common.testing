@@ -9,8 +9,8 @@ abstract class CmsTestCase extends \PHPUnit_Framework_TestCase
      * @param string   $exception
      * @param string   $message
      *
-     * @return \Exception|null
-     * @throws \Exception
+     * @return \Throwable|null
+     * @throws \Throwable
      */
     public function assertThrows(callable $operation, $exception = \Exception::class, $message = 'Failed asserting that the operation throws an exception')
     {
@@ -19,7 +19,7 @@ abstract class CmsTestCase extends \PHPUnit_Framework_TestCase
         try {
             $operation();
             $thrownException = false;
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             if (strpos(get_class($e), 'PHPUnit_Framework') === 0) {
                 throw $e;
             }
