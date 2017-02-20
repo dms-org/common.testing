@@ -2,7 +2,9 @@
 
 namespace Dms\Common\Testing;
 
-abstract class CmsTestCase extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+abstract class CmsTestCase extends TestCase
 {
     use DmsAsserts;
 }
