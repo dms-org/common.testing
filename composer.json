@@ -1,5 +1,5 @@
 {
-    "name": "dms/common.testing",
+    "name": "dms-org/common.testing",
     "description": "Common testing utilities package for all dms packages",
     "authors": [
         {
