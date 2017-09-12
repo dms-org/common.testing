@@ -2,6 +2,8 @@
 
 namespace Dms\Common\Testing\Runner;
 
+use PHPUnit\TextUI\Command;
+
 abstract class TestRunner
 {
     /**
@@ -32,7 +34,7 @@ abstract class TestRunner
         if (class_exists('IDE_PHPUnit_TextUI_Command')) {
             \IDE_PHPUnit_TextUI_Command::main();
         } else {
-            \PHPUnit_TextUI_Command::main();
+            Command::main();
         }
     }
     

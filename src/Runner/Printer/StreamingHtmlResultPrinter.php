@@ -2,7 +2,14 @@
 
 namespace Dms\Common\Testing\Runner\Printer;
 
-class StreamingHtmlResultPrinter extends \PHPUnit_TextUI_ResultPrinter
+use PHPUnit\Framework\AssertionFailedError;
+use PHPUnit\Framework\Test;
+use PHPUnit\Framework\TestFailure;
+use PHPUnit\Framework\TestResult;
+use PHPUnit\Framework\TestSuite;
+use PHPUnit\TextUI\ResultPrinter;
+
+class StreamingHtmlResultPrinter extends ResultPrinter
 {
     const PRINTER_CLASS = __CLASS__;
     const BUFFER_PADDING = 2048;
@@ -14,7 +21,7 @@ class StreamingHtmlResultPrinter extends \PHPUnit_TextUI_ResultPrinter
         $this->autoFlush = true;
     }
     
-    public function startTestSuite(\PHPUnit_Framework_TestSuite $suite)
+    public function startTestSuite(TestSuite $suite)
     {
         parent::startTestSuite($suite);
         $this->maxColumn = self::TEST_RESULT_COLUMNS;
@@ -38,14 +45,14 @@ class StreamingHtmlResultPrinter extends \PHPUnit_TextUI_ResultPrinter
     }
     
     
-    public function addError(\PHPUnit_Framework_Test $test, \Exception $e, $time)
+    public function addError(Test $test, \Exception $e, $time)
     {
         echo '<span style="color:red">';
         parent::addError($test, $e, $time);
         echo '</span>';
     }
     
-    public function addFailure(\PHPUnit_Framework_Test $test, \PHPUnit_Framework_AssertionFailedError $e, $time)
+    public function addFailure(Test $test, AssertionFailedError $e, $time)
     {
         echo '<span style="color:red">';
         parent::addFailure($test, $e, $time);
@@ -59,14 +66,14 @@ class StreamingHtmlResultPrinter extends \PHPUnit_TextUI_ResultPrinter
         echo '</span>';
     }
     
-    protected function printDefect(\PHPUnit_Framework_TestFailure $defect, $count)
+    protected function printDefect(TestFailure $defect, $count)
     {
         echo '<span class="defect">';
         parent::printDefect($defect, $count);
         echo '</span>';
     }
     
-    protected function printFooter(\PHPUnit_Framework_TestResult $result)
+    protected function printFooter(TestResult $result)
     {
         echo '<span class="result">';
         parent::printFooter($result);

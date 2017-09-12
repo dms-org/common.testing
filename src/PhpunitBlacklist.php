@@ -2,6 +2,8 @@
 
 namespace Dms\Common\Testing;
 
+use PHPUnit\Util\Blacklist;
+
 /**
  * Adds the appropriate classes to the phpunit blacklist
  * so they do not show up in exception traces.
@@ -15,12 +17,12 @@ abstract class PhpunitBlacklist
      */
     public static function load()
     {
-        \PHPUnit_Util_Blacklist::$blacklistedClassNames += [
+        Blacklist::$blacklistedClassNames += [
             CmsTestCase::class => 2
         ];
 
         if (class_exists('Dms\Core\Exception\BaseException')) {
-            \PHPUnit_Util_Blacklist::$blacklistedClassNames['Dms\Core\Exception\BaseException'] = 1;
+            Blacklist::$blacklistedClassNames['Dms\Core\Exception\BaseException'] = 1;
         }
     }
 }
