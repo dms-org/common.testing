@@ -25,7 +25,7 @@ abstract class Bootstrapper
         ini_set('display_errors', 'On');
         set_time_limit($timeLimit ?: 0);
         @date_default_timezone_set(@date_default_timezone_get());
-        PhpunitBlacklist::load();
+        PhpunitExcludeList::load();
 
         $fullConfigurationPath = $directory . DIRECTORY_SEPARATOR . $configurationPath;
 
