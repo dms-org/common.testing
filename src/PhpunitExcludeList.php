@@ -17,11 +17,11 @@ abstract class PhpunitExcludeList
      */
     public static function load()
     {
-        ExcludeList::addDirectory(__DIR__);
+        // ExcludeList::addDirectory(__DIR__);
 
-        if (class_exists('Dms\Core\Exception\BaseException')) {
-            ExcludeList::addDirectory(dirname((new \ReflectionClass('Dms\Core\Exception\BaseException'))->getFileName()));
-        }
+        // if (class_exists('Dms\Core\Exception\BaseException')) {
+        //     ExcludeList::addDirectory(dirname((new \ReflectionClass('Dms\Core\Exception\BaseException'))->getFileName()));
+        // }
     }
 }
 
