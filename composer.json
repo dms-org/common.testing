@@ -14,11 +14,9 @@
             "Dms\\Common\\Testing\\": "src/"
         }
     },
-    "require-dev": {
-        
-    },
     "require": {
         "php": ">=7.0.0",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.0",
+        "dms/phpunit-arraysubset-asserts": "^0.2.1"
     }
 }
